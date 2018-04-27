@@ -20,7 +20,7 @@ export const AppRoutes: Routes = [
         component: DashboardComponent
     },
     {
-        path: 'user',
+        path: 'usuario',
         component: UserComponent
     },
     {
@@ -36,7 +36,7 @@ export const AppRoutes: Routes = [
         component: IconsComponent
     },
     {
-        path: 'maps',
+        path: 'animais',
         component: MapsComponent
     },
     {
