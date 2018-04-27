@@ -1,0 +1,27 @@
+{
+  "name": "pwa_unesc_museu",
+  "version": "1.0.0",
+  "description": "PWA MUSEU",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jean1dev/PWA_UNESC_MUSEU.git"
+  },
+  "author": "Alunos da 6 fase",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jean1dev/PWA_UNESC_MUSEU/issues"
+  },
+  "homepage": "https://github.com/Jean1dev/PWA_UNESC_MUSEU#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-query-int": "^3.0.0",
+    "lodash": "^4.17.10",
+    "nodemon": "^1.17.3"
+  }
+}
