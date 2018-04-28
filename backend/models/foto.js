@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     const foto = sequelize.define('foto', {
 
-        id_foto: {
+    id_foto: {
             type: DataTypes.INTEGER(),
             primaryKey: true
         },
@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
 
     foto.associate = function(models) {
         foto.belongsTo(models.info_museu)
-      }
+    }
 
     return foto
 }
