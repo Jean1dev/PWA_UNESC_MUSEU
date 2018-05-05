@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     telefone: DataTypes.STRING(15),
     telefone_secundario: DataTypes.STRING(15),
     email: DataTypes.STRING(45),
-    data_visita: DataTypes.DATE(20),
+    data_visita: DataTypes.DATE(),
     numero_visitantes: DataTypes.INTEGER(),
     turno: DataTypes.STRING(15),
     responsavel_visita: DataTypes.STRING(80),

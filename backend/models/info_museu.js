@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
   const info_museu = sequelize.define('info_museu', {
 
   id_info_museu: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.INTEGER(),
       primaryKey: true,
       autoIncrement: true
     },
