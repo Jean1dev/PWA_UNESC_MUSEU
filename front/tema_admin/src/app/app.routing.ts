@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -12,7 +13,7 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 export const AppRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'login',
         pathMatch: 'full',
     },
     {
@@ -38,6 +39,10 @@ export const AppRoutes: Routes = [
     {
         path: 'animais',
         component: MapsComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     },
     {
         path: 'notifications',
