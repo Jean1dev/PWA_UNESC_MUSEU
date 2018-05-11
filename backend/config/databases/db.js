@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  port: process.env.PORT || 3306,
+  port: process.env.PORT || 8081,
   db: {
     database: process.env.DB_NAME || 'museudb',
     user: process.env.DB_USER || 'root',

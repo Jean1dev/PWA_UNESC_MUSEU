@@ -16,5 +16,9 @@ module.exports = (sequelize, DataTypes) => {
     cnpj: DataTypes.STRING(14)
   })
 
+  agendamento.associate = function(models){
+    
+  }
+
   return agendamento
 }

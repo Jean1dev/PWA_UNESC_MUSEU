@@ -11,5 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     data_fundacao: DataTypes.DATE
   })
 
+  info_museu.associate = function(models){
+    
+  }
+
   return info_museu
 }
