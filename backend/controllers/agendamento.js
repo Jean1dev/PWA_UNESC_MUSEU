@@ -1,4 +1,4 @@
-const {Agendamento} = require('../models/Agendamento')
+const {Agendamento} = require('../models')
 
 module.exports = {
   async index (req, res) {
