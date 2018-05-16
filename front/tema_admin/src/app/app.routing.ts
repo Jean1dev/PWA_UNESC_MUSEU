@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth-guard.service';
 import { LoginComponent } from './login/login.component';
 import { Routes } from '@angular/router';
 
@@ -13,43 +14,53 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 export const AppRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'login',
-        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        component: DashboardComponent
     },
     {
         path: 'dashboard',
+        canActivate: [AuthGuard],
         component: DashboardComponent
     },
     {
         path: 'usuario',
+        canActivate: [AuthGuard],
         component: UserComponent
     },
-    {
-        path: 'table',
-        component: TableComponent
-    },
-    {
-        path: 'typography',
-        component: TypographyComponent
-    },
-    {
-        path: 'icons',
-        component: IconsComponent
-    },
+
     {
         path: 'animais',
+        canActivate: [AuthGuard],
         component: MapsComponent
     },
     {
         path: 'login',
         component: LoginComponent
     },
-    {
-        path: 'notifications',
-        component: NotificationsComponent
-    },
-    {
-        path: 'upgrade',
-        component: UpgradeComponent
-    }
+
+    // ate aqui
+
+
+
+    // {
+    //     path: 'table',
+    //     component: TableComponent
+    // },
+    // {
+    //     path: 'typography',
+    //     component: TypographyComponent
+    // },
+    // {
+    //     path: 'icons',
+    //     component: IconsComponent
+    // },
+
+    // {
+    //     path: 'notifications',
+    //     component: NotificationsComponent
+    // },
+    // {
+    //     path: 'upgrade',
+    //     component: UpgradeComponent
+    // }
 ]

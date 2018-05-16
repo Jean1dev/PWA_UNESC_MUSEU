@@ -1,3 +1,5 @@
+import { UserService } from '../dashboard/user.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,6 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LoginComponent implements OnInit{
-    ngOnInit(){
+
+    constructor(private router: Router, private user: UserService) { }
+
+    ngOnInit() {
+    }
+
+    loginUser(e) {
+        e.preventDefault();
+        const username = e.target.elements[0].value;
+        const password = e.target.elements[1].value;
+
+        if (username === 'admin' && password === 'admin') {
+            localStorage.setItem('_msu-permission', 'true');
+            this.router.navigate(['/dashboard']);
+        }
+
     }
 }
