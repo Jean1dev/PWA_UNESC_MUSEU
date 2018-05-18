@@ -6,7 +6,12 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 @Component({
     moduleId: module.id,
     selector: 'navbar-cmp',
-    templateUrl: 'navbar.component.html'
+    templateUrl: 'navbar.component.html',
+    styles: [`
+    .logout {
+      cursor: pointer;
+    }
+  `]
 })
 
 export class NavbarComponent implements OnInit{
@@ -18,7 +23,7 @@ export class NavbarComponent implements OnInit{
 
     @ViewChild("navbar-cmp") button;
 
-    constructor(location:Location, private renderer : Renderer, private element : ElementRef) {
+    constructor(location: Location, private renderer: Renderer, private element: ElementRef, private router: Router) {
         this.location = location;
         this.nativeElement = element.nativeElement;
         this.sidebarVisible = false;
@@ -54,5 +59,10 @@ export class NavbarComponent implements OnInit{
             this.sidebarVisible = false;
             body.classList.remove('nav-open');
         }
+    }
+
+    logout() {
+        localStorage.removeItem('_msu-permission');
+        this.router.navigate(['/login']);
     }
 }

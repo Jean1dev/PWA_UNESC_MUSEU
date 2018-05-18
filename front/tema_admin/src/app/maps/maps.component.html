@@ -12,12 +12,12 @@
                         <h4 class="title">Cadastro de Animais</h4>
                     </div>
                     <div class="content">
-                        <form>
+                        <form novalidate [formGroup]="form" (ngSubmit)="submit($event)">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Nome do animal</label>
-                                        <input type="text" class="form-control border-input" placeholder="Digite seu nome">
+                                        <input type="text" formControlName="name" class="form-control border-input" placeholder="Digite seu nome">
                                     </div>
                                 </div>
                             </div>
@@ -27,7 +27,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nome Científico </label>
-                                        <input type="text" class="form-control border-input" placeholder="Digite o seu Email">
+                                        <input type="text" formControlName="cientifc_name" class="form-control border-input" placeholder="Digite o seu Email">
                                     </div>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Ordem</label>
-                                        <input type="text" class="form-control border-input" placeholder="Senha">
+                                        <input type="text" formControlName="order" class="form-control border-input" placeholder="Senha">
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Família</label>
-                                        <input type="text" class="form-control border-input" placeholder="Senha">
+                                        <input type="text" formControlName="family" class="form-control border-input" placeholder="Senha">
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Descrição</label>
-                                        <input type="text" class="form-control border-input" placeholder="Senha">
+                                        <input type="text" formControlName="description" class="form-control border-input" placeholder="Senha">
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Distribuição Geográfica</label>
-                                        <input type="text" class="form-control border-input" placeholder="Senha">
+                                        <input type="text" formControlName="position" class="form-control border-input" placeholder="Senha">
                                     </div>
                                 </div>
                             </div>
@@ -76,11 +76,12 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Habitat</label>
-                                        <input type="text" class="form-control border-input" placeholder="Senha">
+                                        <input type="text" formControlName="habitat" class="form-control border-input" placeholder="Senha">
                                     </div>
                                 </div>
                             </div>
 
+                            <!--<input class="imgupd__input-file" name="inputfile" id="inputfile" type="file" (upload)="onUpload($event)">-->
 
                             <div class="text-center">
                                 <button type="submit" class="btn btn-info btn-fill btn-wd">Salvar</button>
