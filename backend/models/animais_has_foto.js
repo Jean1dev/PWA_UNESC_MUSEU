@@ -3,8 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   })
 
   animais_has_foto.associate = function (models) {
-    animais_has_foto.belongsTo(models.animais)
-    animais_has_foto.belongsTo(models.foto)
+    animais_has_foto.belongsTo(models.Animais)
+    animais_has_foto.belongsTo(models.Foto)
   }
 
   return animais_has_foto

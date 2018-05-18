@@ -38,8 +38,11 @@ module.exports = {
     }
   },
   async put (req, res) {
+
+    object = Ferramentas.getFormatImg(req)
+
     try {
-      await Foto.update(req.body, {
+      await Foto.update(object, {
         where: {
           id: req.params.id_Foto
         }

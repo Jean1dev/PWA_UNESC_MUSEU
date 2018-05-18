@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
-  const animais = sequelize.define('animais', {
+  const Animais = sequelize.define('Animais', {
 
-    id_animais: {
+    id_Animais: {
       type: DataTypes.INTEGER(),
       primaryKey: true,
       autoIncrement: true
@@ -19,9 +19,9 @@ module.exports = (sequelize, DataTypes) => {
     habitat: DataTypes.STRING(200)
   })
 
-  animais.associate = function (models) {
-    animais.belongsTo(models.info_museu)
+  Animais.associate = function (models) {
+    Animais.belongsTo(models.info_museu)
   }
 
-  return animais
+  return Animais
 }

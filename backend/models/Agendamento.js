@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-  const agendamento = sequelize.define('agendamento', {
-    id_agendamento: {
+  const Agendamento = sequelize.define('Agendamento', {
+    id_Agendamento: {
       type: DataTypes.INTEGER(),
       primaryKey: true,
       autoIncrement: true
@@ -16,9 +16,9 @@ module.exports = (sequelize, DataTypes) => {
     cnpj: DataTypes.STRING(14)
   })
 
-  agendamento.associate = function(models){
+  Agendamento.associate = function(models){
     
   }
 
-  return agendamento
+  return Agendamento
 }
