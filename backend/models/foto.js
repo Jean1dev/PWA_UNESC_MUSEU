@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const foto = sequelize.define('foto', {
+    const Foto = sequelize.define('Foto', {
 
     id_foto: {
             type: DataTypes.INTEGER(),
@@ -8,9 +8,9 @@ module.exports = (sequelize, DataTypes) => {
         end_foto: DataTypes.STRING(80),
     })
 
-    foto.associate = function(models) {
-        foto.belongsTo(models.info_museu)
+    Foto.associate = function(models) {
+        Foto.belongsTo(models.info_museu)
     }
 
-    return foto
+    return Foto
 }

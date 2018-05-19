@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const info_museu = sequelize.define('info_museu', {
+  const Museu = sequelize.define('info_museu', {
 
   id_info_museu: {
       type: DataTypes.INTEGER(),
@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     data_fundacao: DataTypes.DATE
   })
 
-  info_museu.associate = function(models){
+  Museu.associate = function(models){
     
   }
 
-  return info_museu
+  return Museu
 }
