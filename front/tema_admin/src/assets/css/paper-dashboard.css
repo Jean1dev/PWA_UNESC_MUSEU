@@ -2177,14 +2177,7 @@ Copyright (c) 2015 Daniel Eden
   margin: 30px 0 30px;
   height: 245px;
 }
-.card .table tbody td:first-child,
-.card .table thead th:first-child {
-  padding-left: 15px;
-}
-.card .table tbody td:last-child,
-.card .table thead th:last-child {
-  padding-right: 15px;
-}
+
 .card .alert {
   border-radius: 4px;
   position: relative;
@@ -3063,15 +3056,6 @@ Copyright (c) 2015 Daniel Eden
     display: none !important;
   }
 
-  .card form [class*="col-"] {
-    padding: 6px;
-  }
-  .card form [class*="col-"]:first-child {
-    padding-left: 15px;
-  }
-  .card form [class*="col-"]:last-child {
-    padding-right: 15px;
-  }
 }
 /*          Changes for small display      */
 @media (max-width: 991px) {

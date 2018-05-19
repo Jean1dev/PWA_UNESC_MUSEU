@@ -5,17 +5,29 @@ declare var google: any;
 
 @Component({
     moduleId: module.id,
-    selector: 'maps-cmp',
-    templateUrl: 'maps.component.html'
+    selector: 'animals-cmp',
+    templateUrl: 'animals.component.html'
 })
 
-export class MapsComponent implements OnInit {
+export class AnimalsComponent implements OnInit {
 
   /**
    * Instância do formulario.
    */
     form: FormGroup;
-
+    validateTypeFile(){
+        console.log('vai ti deitaaa!!')
+        debugger
+        var fileName = (<HTMLInputElement>document.getElementById('inputImage')).value;
+        var idxDot = fileName.lastIndexOf(".") + 1;
+        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+        if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+            alert('boa seu filha da puta!')
+        }else{
+            alert("Only jpg/jpeg and png files are allowed!");
+        }   
+    }
+    
     ngOnInit() {
         this.form = this.createForm();
         console.log(this.form)

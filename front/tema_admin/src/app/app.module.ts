@@ -21,7 +21,7 @@ import { UserComponent } from './user/user.component';
 import { TableComponent } from './table/table.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
-import { MapsComponent } from './maps/maps.component';
+import { AnimalsComponent } from './animals/animals.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { LoginComponent } from './login/login.component';
@@ -34,7 +34,7 @@ import { LoginComponent } from './login/login.component';
     TableComponent,
     TypographyComponent,
     IconsComponent,
-    MapsComponent,
+    AnimalsComponent,
     NotificationsComponent,
     UpgradeComponent,
     LoginComponent
