@@ -15,7 +15,9 @@ module.exports = server =>{
 
     //ANIMAIS
     server.post('/animais', AnimaisController.post)
+    server.post('/animais:id_Animais', AnimaisController.put)
     server.get('/animais', AnimaisController.getAll)
+    server.get('/animais:id_Animais', AnimaisController.getById)
 
     //USUARIOS
     server.post('/usuarios', UsuarioController.post)

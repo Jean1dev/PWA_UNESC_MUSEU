@@ -5,7 +5,7 @@ module.exports = {
   db: {
     database: process.env.DB_NAME || 'museudb',
     user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASS || 'obscure1',
+    password: process.env.DB_PASS || 'obscure345',
     options: {
       dialect: process.env.DIALECT || 'mysql',
       host: process.env.HOST || '127.0.0.1'

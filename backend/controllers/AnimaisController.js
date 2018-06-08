@@ -37,7 +37,7 @@ module.exports = {
     try {
       await Animais.update(req.body, {
         where: {
-          id: req.params.id_Animais
+          id_Animais: req.params.id_Animais
         }
       })
       res.send(req.body)
