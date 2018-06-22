@@ -1,7 +1,20 @@
 import { FormControl, FormGroup } from '@angular/forms';
 import { Component,OnInit } from '@angular/core';
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 declare var google: any;
+
+
+export class objetoAnimal{
+    nome: string;
+    nome_cientifico: string;
+    ordem: string;
+    familia: string;
+    distribuicao_geografica: string;
+    habitat: string;
+    descricao: string;
+}
 
 @Component({
     moduleId: module.id,
@@ -10,6 +23,11 @@ declare var google: any;
 })
 
 export class AnimalsComponent implements OnInit {
+
+
+    constructor(private http: HttpClient){
+    }
+    
 
   /**
    * Instância do formulario.
@@ -30,7 +48,6 @@ export class AnimalsComponent implements OnInit {
     
     ngOnInit() {
         this.form = this.createForm();
-        console.log(this.form)
     }
 
     onUpload(e) {
@@ -40,8 +57,23 @@ export class AnimalsComponent implements OnInit {
     submit(e) {
         
         e.preventDefault();
-        const username = e.target.elements[0].value;
-        console.log(username)
+
+        const ani = new objetoAnimal();
+        ani.nome = e.target.elements[0].value;
+        ani.nome_cientifico = e.target.elements[1].value;
+        ani.ordem = e.target.elements[2].value;
+        ani.familia = e.target.elements[3].value;
+        ani.distribuicao_geografica = e.target.elements[4].value;
+        ani.habitat = e.target.elements[5].value;
+        ani.descricao = e.target.elements[6].value;
+
+        console.log(ani)
+
+        this.http.post("http://localhost:8081/animais", ani).subscribe((res) => {
+            alert('Animal cadastrado com sucesso');
+        }, (err) => {
+            alert('Houveram erros ao enviar ao servidor');
+        });
     }
 
     private createForm(): FormGroup {
@@ -53,6 +85,7 @@ export class AnimalsComponent implements OnInit {
             description: new FormControl(),
             position: new FormControl(),
             habitat: new FormControl(),
+            descricao: new FormControl(),
         });
     }
 

@@ -25,6 +25,7 @@ import { AnimalsComponent } from './animals/animals.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,12 +50,13 @@ import { LoginComponent } from './login/login.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
 
 //    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
 
   ],
-  providers: [UserService, AuthGuard, AuthService, Http],
+  providers: [UserService, AuthGuard, AuthService, Http, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
