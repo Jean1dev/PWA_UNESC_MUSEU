@@ -3,78 +3,86 @@
 
 -->
 
-    <div class="container-fluid">
-        <div class="row">
+<div class="container-fluid">
+    <div class="row">
 
-            <div class="col-lg-12 col-md-12">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">Cadastro de Animais</h4>
-                    </div>
-                    <div class="content">
-                        <form novalidate [formGroup]="form" (ngSubmit)="submit($event)">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Nome do animal</label>
-                                        <input type="text" formControlName="name" class="form-control border-input" placeholder="Digite o nome do animal">
-                                    </div>
-                                </div>
-     
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Nome Científico </label>
-                                        <input type="text" formControlName="cientifc_name" class="form-control border-input" placeholder="Digite o nome científico do animal">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Ordem</label>
-                                        <input type="text" formControlName="order" class="form-control border-input" placeholder="Digite a ordem do animal">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Família</label>
-                                        <input type="text" formControlName="family" class="form-control border-input" placeholder="Digite a família do animal">
-                                    </div>
-                                </div>
-                            </div>
-                            
-
-
-                            
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Distribuição Geográfica</label>
-                                        <input type="text" formControlName="position" class="form-control border-input" placeholder="Digite a distribuição geográfica do animal">
-                                    </div>
-                                </div>
- 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Habitat</label>
-                                        <input type="text" formControlName="habitat" class="form-control border-input" placeholder="Digite o habitat do animal">
-                                    </div>
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Cadastro de Animais</h4>
+                </div>
+                <div class="content">
+                    <form novalidate [formGroup]="form" (ngSubmit)="submit($event)">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Nome do animal</label>
+                                    <input type="text" formControlName="name" class="form-control border-input" placeholder="Digite o nome do animal">
                                 </div>
                             </div>
 
-
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Descrição</label>
-                                        <textarea name="description"  class="form-control border-input" formControlName="description" id="" cols="30" rows="10"></textarea>              
-                                    </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Nome Científico </label>
+                                    <input type="text" formControlName="cientifc_name" class="form-control border-input" placeholder="Digite o nome científico do animal">
                                 </div>
                             </div>
 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Ordem</label>
+                                    <input type="text" formControlName="order" class="form-control border-input" placeholder="Digite a ordem do animal">
+                                </div>
+                            </div>
 
-                            <!-- <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Família</label>
+                                    <input type="text" formControlName="family" class="form-control border-input" placeholder="Digite a família do animal">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Distribuição Geográfica</label>
+                                    <input type="text" formControlName="position" class="form-control border-input" placeholder="Digite a distribuição geográfica do animal">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Habitat</label>
+                                    <input type="text" formControlName="habitat" class="form-control border-input" placeholder="Digite o habitat do animal">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Descrição</label>
+                                    <textarea name="description" class="form-control border-input" formControlName="description" id="" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+
+                                    <label class="control-label">Select File</label>
+                                    <input name="avatar" id="input-1" type="file" class="file">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Curiosidades</label>
@@ -82,21 +90,20 @@
                                     </div>
                                 </div>
                             </div> -->
-         
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-info btn-fill btn-wd">Salvar</button>
-                            </div>
-                            <div class="clearfix"></div>
-                          
-                        </form>
+
                         <div class="text-center">
-                            <button (click)="generateQrCode()" class="btn btn-info btn-fill btn-wd">gerar qrcode</button>
+                            <button type="submit" class="btn btn-info btn-fill btn-wd">Salvar</button>
                         </div>
-                    </div>
+                        <div class="clearfix"></div>
+
+                    </form>
+                    <!--<div class="text-center">
+                        <button (click)="generateQrCode()" class="btn btn-info btn-fill btn-wd">gerar qrcode</button>
+                    </div>-->
                 </div>
             </div>
-
-
         </div>
-    </div>
 
+
+    </div>
+</div>

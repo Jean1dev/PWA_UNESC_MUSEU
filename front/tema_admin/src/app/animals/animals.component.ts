@@ -16,6 +16,7 @@ export class objetoAnimal {
     distribuicao_geografica: string;
     habitat: string;
     descricao: string;
+    img: string;
 }
 
 @Component({
