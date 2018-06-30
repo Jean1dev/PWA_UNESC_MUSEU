@@ -1,12 +1,14 @@
 import { FormControl, FormGroup } from '@angular/forms';
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import QRCode from 'qrcode'
 
 declare var google: any;
 
 
-export class objetoAnimal{
+export class objetoAnimal {
     nome: string;
     nome_cientifico: string;
     ordem: string;
@@ -24,28 +26,29 @@ export class objetoAnimal{
 
 export class AnimalsComponent implements OnInit {
 
+    url_qrcode: any
 
-    constructor(private http: HttpClient){
+    constructor(private http: HttpClient) {
     }
-    
 
-  /**
-   * Instância do formulario.
-   */
+
+    /**
+     * Instância do formulario.
+     */
     form: FormGroup;
-    validateTypeFile(){
+    validateTypeFile() {
         console.log('vai ti deitaaa!!')
         debugger
         var fileName = (<HTMLInputElement>document.getElementById('inputImage')).value;
         var idxDot = fileName.lastIndexOf(".") + 1;
         var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-        if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+        if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
             alert('boa seu filha da puta!')
-        }else{
+        } else {
             alert("Only jpg/jpeg and png files are allowed!");
-        }   
+        }
     }
-    
+
     ngOnInit() {
         this.form = this.createForm();
     }
@@ -54,8 +57,19 @@ export class AnimalsComponent implements OnInit {
         console.log(e)
     }
 
+    generateQrCode() {
+        var url_temp = `localhost:8081/animais:${this.url_qrcode[`id_Animais`]}`
+        QRCode.toDataURL(url_temp)
+            .then(url => {
+                console.log(url)
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }
+
     submit(e) {
-        
+
         e.preventDefault();
 
         const ani = new objetoAnimal();
@@ -71,6 +85,9 @@ export class AnimalsComponent implements OnInit {
 
         this.http.post("http://localhost:8081/animais", ani).subscribe((res) => {
             alert('Animal cadastrado com sucesso');
+            this.url_qrcode = res
+            console.log(this.url_qrcode[`id_Animais`])
+            this.generateQrCode()
         }, (err) => {
             alert('Houveram erros ao enviar ao servidor');
         });
