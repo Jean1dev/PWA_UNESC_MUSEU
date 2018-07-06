@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
     habito_alimentar: DataTypes.STRING(255),
     producao: DataTypes.STRING(200),
     periodo_vida: DataTypes.STRING(200),
-    habitat: DataTypes.STRING(200)
+    habitat: DataTypes.STRING(200),
+    pathImg: DataTypes.STRING(200)
   })
 
   Animais.associate = function (models) {
