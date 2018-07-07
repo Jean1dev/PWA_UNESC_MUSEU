@@ -22,10 +22,10 @@ import { TableComponent } from './table/table.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { AnimalsComponent } from './animals/animals.component';
-import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RelatorioComponent } from './relatorio/relatorio.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     TypographyComponent,
     IconsComponent,
     AnimalsComponent,
-    NotificationsComponent,
+    RelatorioComponent,
     UpgradeComponent,
     LoginComponent
   ],

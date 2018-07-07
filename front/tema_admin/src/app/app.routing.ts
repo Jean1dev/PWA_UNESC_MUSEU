@@ -8,8 +8,9 @@ import { TableComponent } from './table/table.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { AnimalsComponent } from './animals/animals.component';
-import { NotificationsComponent } from './notifications/notifications.component';
+
 import { UpgradeComponent } from './upgrade/upgrade.component';
+import { RelatorioComponent } from './relatorio/relatorio.component';
 
 export const AppRoutes: Routes = [
     {
@@ -26,6 +27,12 @@ export const AppRoutes: Routes = [
         path: 'usuario',
         canActivate: [AuthGuard],
         component: UserComponent
+    },
+
+    {
+        path: 'relatorio',
+        canActivate: [AuthGuard],
+        component: RelatorioComponent
     },
 
     {

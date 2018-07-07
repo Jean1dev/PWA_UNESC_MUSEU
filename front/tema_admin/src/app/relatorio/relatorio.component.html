@@ -1,0 +1,18 @@
+<table st-table="rowCollection" class="table table-striped">
+	<thead>
+	<tr>
+		<th>Nome</th>
+		<th>Nome científico</th>
+		<th>Descrição</th>
+	</tr>
+	</thead>
+	<tbody>
+        
+     <!-- tem que passar o resultado da requisicao aqui    -->
+	<tr ng-repeat="animal in animais">
+		<td>{{animal.nome}}</td>
+		<td>{{row.nome_cientifico}}</td>
+		<td>{{row.descricao}}</td>
+	</tr>
+	</tbody>
+</table>

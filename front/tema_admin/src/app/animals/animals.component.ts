@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import QRCode from 'qrcode'
+import { timeout } from 'rxjs/operator/timeout';
 
 declare var google: any;
 
@@ -28,25 +29,47 @@ export class objetoAnimal {
 export class AnimalsComponent implements OnInit {
 
     url_qrcode: any
+    successMessage: boolean = false
+    errorMessage: boolean = false
+    message: string
 
     constructor(private http: HttpClient) {
     }
-
 
     /**
      * Instância do formulario.
      */
     form: FormGroup;
+
+    setMessage(message) {
+        this.message = message
+    }
+
+    showSuccessMessage() {
+         this.successMessage = true
+         setTimeout(()=>{
+            this.successMessage = false
+        }, 3000);        
+    }
+
+    showErrorMessage(): void {        
+        this.errorMessage = true
+        setTimeout(()=>{
+            this.errorMessage = false
+        }, 5000);        
+    }
+
     validateTypeFile() {
-        console.log('vai ti deitaaa!!')
-        debugger
         var fileName = (<HTMLInputElement>document.getElementById('inputImage')).value;
         var idxDot = fileName.lastIndexOf(".") + 1;
         var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
         if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
-            alert('boa seu filha da puta!')
+            this.setMessage("Enviado com sucesso")
+            this.showSuccessMessage()
+            
         } else {
-            alert("Only jpg/jpeg and png files are allowed!");
+            this.setMessage("Válido somente arquivos nos formatos: JPG / JPEG / PNG")
+            this.showErrorMessage()
         }
     }
 
@@ -89,8 +112,10 @@ export class AnimalsComponent implements OnInit {
             this.url_qrcode = res
             console.log(this.url_qrcode[`id_Animais`])
             this.generateQrCode()
-        }, (err) => {
-            alert('Houveram erros ao enviar ao servidor');
+        }, (err) => {            
+            this.setMessage("Houveram erros ao enviar ao servidor")        
+            this.errorMessage = true
+            this.showErrorMessage()
         });
     }
 
