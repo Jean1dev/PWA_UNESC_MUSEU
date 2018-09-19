@@ -1,3 +1,5 @@
+fs = require('fs')
+
 module.exports.getFormatImg = function(toParam){
     let date = new Date()
     let timestamp = date.getTime();
